@@ -1,0 +1,8 @@
+// Trabalho 4 de POO
+
+-> CRUD (Create, Read, Update, Delete)
+    * Classe abstrata -> Jogadores
+    * Subclasses -> Atacantes, Meio-campistas, Defensores, Goleiros
+    * Classe responsável pelo CRUD -> elenco
+
+g++ -o main Jogador.cpp MeioCampista.cpp Atacante.cpp Defensor.cpp Goleiro.cpp Elenco.cpp main.cpp

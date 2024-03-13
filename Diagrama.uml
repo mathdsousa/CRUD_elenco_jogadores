@@ -1,0 +1,103 @@
+@startuml
+
+class Elenco
+{
+    -string fileName
+    -vector<Jogador*>jogadores
+    +Elenco(string)
+    +bool adiciona(int )
+    +void imprimeOrdenado()
+    +void imprime(int )
+    +bool remove(int )
+    +bool atualiza(int )
+    +{static} int opcao()
+    -void grava()
+    -void grava()
+    -int indice(int )
+}
+
+Elenco "0..1" --> "0..*"Jogador
+Elenco - Jogador : jogadores >
+
+class Jogador
+{
+    -string nome
+    -string apelido
+    -double salario
+    -int camisa
+    -int fimContrato
+    -float altura
+    -string nacionalidade
+    -int idade
+    +Jogador(string, string, double, int, int )
+    +string getNome()
+    +void setNome(string )
+    +string getApelido()
+    +void setApelido(string )
+    +int getFimContrato()
+    +void setFimContrato(int )
+    +double getSalario()
+    +void setSalario(double )
+    +int getCamisa()
+    +void setCamisa(int )
+    +float getAltura()
+    +void setAltura(float )
+    +string getNacionalidade()
+    +void setNacionalidade(string )
+    +int getIdade()
+    +void setIdade(int )
+    +{abstract}int getPosicao()
+    +void imprime()
+    +{static}comparaNome(Jogador*, Jogador* )
+    +{static}comparaCamisa(Jogador*, Jogador* )
+    +{static}comparaPosicao(Jogador*, Jogador* )
+    +{static}comparaSalario(Jogador*, Jogador* )
+    +{static}comparaApelido(Jogador*, Jogador* )
+    +{static}comparaFimContrato(Jogador*, Jogador* )
+
+}
+
+Jogador <|-- Goleiro
+
+class Goleiro
+{
+    +Goleiro(string, string, double, int, int )
+    +int getPosicao()
+}
+
+Jogador <|-- Defensor
+
+class Defensor
+{
+    -string posicaoDefesa
+    +Defensor(string, string, double, int, string, int)
+    +string getPosicaoDefesa()
+    +void setPosicaoDefesa(string )
+    +int getPosicao()
+    +void imprime()
+}
+
+Jogador <|-- MeioCampista
+
+class MeioCampista
+{
+    -string posicaoMeioCampo
+    +MeioCampista(string, string, double, int, string, int)
+    +string getposicaoMeioCampo()
+    +void setposicaoMeioCampo(string )
+    +int getPosicao()
+    +void imprime()
+}
+
+Jogador <|-- Atacante
+
+class Atacante
+{
+    -string posicaoAtaque
+    +Atacante(string, string, double, int, string, int)
+    +string getPosicaoAtaque()
+    +void setPosicaoAtaque(string )
+    +int getPosicao()
+    +void imprime()
+}
+@enduml
